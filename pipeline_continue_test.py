@@ -83,7 +83,8 @@ def main():
     # in V2 need bearer token for Authorization at Rest Endpoints
     headers = {
         'Accept': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3NDJjZDdjNC0wOTc5LTRmMDctYjM3Yy1hN2Y0NzdlMzQ3OGIiLCJzdWIiOiIxNzE5ZDRkZC00NmYzLTQzOWYtOTRmOS0zYWI4MWM3MzUwZjYiLCJzY29wZSI6WyJvcGVuaWQiLCJjbG91ZF9jb250cm9sbGVyLnJlYWQiLCJwYXNzd29yZC53cml0ZSIsImNsb3VkX2NvbnRyb2xsZXIud3JpdGUiXSwiY2xpZW50X2lkIjoiY2YiLCJjaWQiOiJjZiIsImF6cCI6ImNmIiwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIiwidXNlcl9pZCI6IjE3MTlkNGRkLTQ2ZjMtNDM5Zi05NGY5LTNhYjgxYzczNTBmNiIsIm9yaWdpbiI6InVhYSIsInVzZXJfbmFtZSI6ImRldm9wczAxQHVzLmlibS5jb20iLCJlbWFpbCI6ImRldm9wczAxQHVzLmlibS5jb20iLCJhdXRoX3RpbWUiOjE0NzkxMjU5OTEsInJldl9zaWciOiIyNDE5Njc5MSIsImlhdCI6MTQ3OTEyNTk5MSwiZXhwIjoxNDgwMzM1NTkxLCJpc3MiOiJodHRwczovL3VhYS5uZy5ibHVlbWl4Lm5ldC9vYXV0aC90b2tlbiIsInppZCI6InVhYSIsImF1ZCI6WyJjZiIsIm9wZW5pZCIsImNsb3VkX2NvbnRyb2xsZXIiLCJwYXNzd29yZCJdfQ.e58kro3V_R1S72wU8yBoeJpb-eF9t6pyXtDxvYviOdY'
+        #'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3NDJjZDdjNC0wOTc5LTRmMDctYjM3Yy1hN2Y0NzdlMzQ3OGIiLCJzdWIiOiIxNzE5ZDRkZC00NmYzLTQzOWYtOTRmOS0zYWI4MWM3MzUwZjYiLCJzY29wZSI6WyJvcGVuaWQiLCJjbG91ZF9jb250cm9sbGVyLnJlYWQiLCJwYXNzd29yZC53cml0ZSIsImNsb3VkX2NvbnRyb2xsZXIud3JpdGUiXSwiY2xpZW50X2lkIjoiY2YiLCJjaWQiOiJjZiIsImF6cCI6ImNmIiwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIiwidXNlcl9pZCI6IjE3MTlkNGRkLTQ2ZjMtNDM5Zi05NGY5LTNhYjgxYzczNTBmNiIsIm9yaWdpbiI6InVhYSIsInVzZXJfbmFtZSI6ImRldm9wczAxQHVzLmlibS5jb20iLCJlbWFpbCI6ImRldm9wczAxQHVzLmlibS5jb20iLCJhdXRoX3RpbWUiOjE0NzkxMjU5OTEsInJldl9zaWciOiIyNDE5Njc5MSIsImlhdCI6MTQ3OTEyNTk5MSwiZXhwIjoxNDgwMzM1NTkxLCJpc3MiOiJodHRwczovL3VhYS5uZy5ibHVlbWl4Lm5ldC9vYXV0aC90b2tlbiIsInppZCI6InVhYSIsImF1ZCI6WyJjZiIsIm9wZW5pZCIsImNsb3VkX2NvbnRyb2xsZXIiLCJwYXNzd29yZCJdfQ.e58kro3V_R1S72wU8yBoeJpb-eF9t6pyXtDxvYviOdY'
+         'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4ZGU0MmIyMS0zZTJlLTRjMjUtOGY5YS0zMjUzN2NjZmViMTgiLCJzdWIiOiIxNzE5ZDRkZC00NmYzLTQzOWYtOTRmOS0zYWI4MWM3MzUwZjYiLCJzY29wZSI6WyJjbG91ZF9jb250cm9sbGVyLnJlYWQiLCJwYXNzd29yZC53cml0ZSIsImNsb3VkX2NvbnRyb2xsZXIud3JpdGUiLCJvcGVuaWQiXSwiY2xpZW50X2lkIjoiY2YiLCJjaWQiOiJjZiIsImF6cCI6ImNmIiwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIiwidXNlcl9pZCI6IjE3MTlkNGRkLTQ2ZjMtNDM5Zi05NGY5LTNhYjgxYzczNTBmNiIsIm9yaWdpbiI6InVhYSIsInVzZXJfbmFtZSI6ImRldm9wczAxQHVzLmlibS5jb20iLCJlbWFpbCI6ImRldm9wczAxQHVzLmlibS5jb20iLCJyZXZfc2lnIjoiMjQxOTY3OTEiLCJpYXQiOjE0ODAzMzg0NjIsImV4cCI6MTQ4MTU0ODA2MiwiaXNzIjoiaHR0cHM6Ly91YWEubmcuYmx1ZW1peC5uZXQvb2F1dGgvdG9rZW4iLCJ6aWQiOiJ1YWEiLCJhdWQiOlsiY2xvdWRfY29udHJvbGxlciIsInBhc3N3b3JkIiwiY2YiLCJvcGVuaWQiXX0.wLlLA1bdZURaMtL28DJEOCmF57EW4P8sWhmQSoIoKCo'
     }
 
     # Get current stages information
@@ -133,7 +134,7 @@ def getStageStatus(otcPipelineHost, ProjectName, cookies, headers, sleepTime):
     #request json file from stages and jobs
     sj = requests.get(stages_jobs, headers=headers, cookies=cookies)
     if sj.status_code != 200:
-        raise Exception('Failed to GET %s, status code %s' %
+        raise Exception('Failed to retrieve stages_jobs, failed to GET %s, status code %s' %
                 (stages_jobs, sj.status_code))
     data_sj = json.loads(sj.content)
     ## extract fields from data_sj
@@ -170,14 +171,14 @@ def getStageStatus(otcPipelineHost, ProjectName, cookies, headers, sleepTime):
         #request latest execution json file for Build stage
         be = requests.get(build_executions, headers=headers, cookies=cookies)
         if be.status_code != 200:
-            raise Exception('Failed to GET %s, status code %s' %
+            raise Exception('Failed to retrieve build_executions, failed to GET %s, status code %s' %
                     (build_executions, be.status_code))
         data_be = json.loads(be.content)
 
         #request latest execution json file for Deploy stage
         de = requests.get(deploy_executions, headers=headers, cookies=cookies)
         if de.status_code != 200:
-            raise Exception('Failed to GET %s, status code %s' %
+            raise Exception('Failed to retrieve deploy_executions, failed to GET %s, status code %s' %
                             (deploy_executions, de.status_code))
         data_de = json.loads(de.content)
 
