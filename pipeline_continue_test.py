@@ -119,10 +119,8 @@ def main():
         print "\nSuccessfully retrieved pipeline information AFTER test run ..."
         for item in curr_pipe_info:
             print item[0], ', '.join(map(str, item[1:]))
-            print item[0]
-            print "\n"
             #check for any FAILURE in item
-            if 'FAILURE' in item:
+            if 'FAILURE' in item[0]:
                 raise Exception("\nThe test run was not run successfully.")
     else:
         raise Exception("\nThe test run was not run successfully.")
