@@ -67,7 +67,7 @@ def main():
         for f in [ssologin]:
             try:
                 cookies = f()
-                breakgit
+                break
             except Exception, e:
                 if i < RETRY - 1:
                     print '\nFailed to log into IDS'
